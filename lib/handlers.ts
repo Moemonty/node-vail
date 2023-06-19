@@ -1,4 +1,4 @@
-exports.home = (req, res) => res.render('home')
-exports.about = (req, res) => res.render('about')
-exports.notFound = (req, res) => res.render('404')
-exports.serverError = (err, req, res, next) => res.render('500')
+exports.home = (req: any, res: any) => res.render('home')
+exports.about = (req: any, res: any) => res.render('about')
+exports.notFound = (req: any, res: any) => res.render('404')
+exports.serverError = (err: any, req: any, res: any, next: any) => res.render('500')
