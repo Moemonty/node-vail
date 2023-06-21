@@ -1,3 +1,4 @@
+// eslint-disable-next-line prefer-const
 let anotherRandomVariable = 'test';
 console.log('this is name', anotherRandomVariable);
 

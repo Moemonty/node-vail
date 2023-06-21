@@ -20,11 +20,13 @@
 function switchFunction(a) {
     switch (a) {
         case 1: {
+            // eslint-disable-next-line prefer-const
             let variableInCase1 = "test";
             console.log(variableInCase1);
             break;
         }
         case 2: {
+            // eslint-disable-next-line prefer-const
             let variableInCase1 = "test2";
             console.log(variableInCase1);
             break;

@@ -1,8 +1,11 @@
 "use strict";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { engine } = require('express-handlebars');
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const handlers = require('./lib/handlers');
 app.engine('handlebars', engine({
     defaultLayout: 'main',

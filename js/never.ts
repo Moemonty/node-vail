@@ -4,6 +4,7 @@ enum EnumWithChoices {
   ChoiceC,
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function functionReturnStringFromEnum(c: EnumWithChoices): string {
   switch (c) {
     case EnumWithChoices.ChoiceA:
@@ -17,6 +18,7 @@ function functionReturnStringFromEnum(c: EnumWithChoices): string {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function unhandledChoiceFromEnum(x: never): never {
   throw new Error("Choice not defined");
 }

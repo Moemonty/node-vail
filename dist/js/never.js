@@ -5,6 +5,7 @@ var EnumWithChoices;
     EnumWithChoices[EnumWithChoices["ChoiceB"] = 1] = "ChoiceB";
     EnumWithChoices[EnumWithChoices["ChoiceC"] = 2] = "ChoiceC";
 })(EnumWithChoices || (EnumWithChoices = {}));
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function functionReturnStringFromEnum(c) {
     switch (c) {
         case EnumWithChoices.ChoiceA:
@@ -17,6 +18,7 @@ function functionReturnStringFromEnum(c) {
             return unhandledChoiceFromEnum(c);
     }
 }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function unhandledChoiceFromEnum(x) {
     throw new Error("Choice not defined");
 }

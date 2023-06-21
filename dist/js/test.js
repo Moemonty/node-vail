@@ -1,4 +1,5 @@
 "use strict";
+// eslint-disable-next-line prefer-const
 let anotherRandomVariable = 'test';
 console.log('this is name', anotherRandomVariable);
 // Won't compile new test.js
