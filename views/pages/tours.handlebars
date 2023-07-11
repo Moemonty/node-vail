@@ -1,0 +1,31 @@
+<h1>Tours</h1>
+<ul>
+    {{#each tours}}
+        {{! In a new block }}
+        <li>
+            {{name}} - {{price}}
+            {{#if ../currencies}}
+                {{../currency.abbrev}}
+            {{/if}}
+        </li>
+    {{/each}}
+</ul>
+
+{{#unless currencies}}
+    <p>All Prices in {{currency.name}}</p>
+{{/unless}}
+
+{{#if specialsUrl}}
+    {{! New block}}
+    <p>Checkout <a href="{{specialsUrl}}">Special</a></p>
+{{else}}
+    <p>Please check back often for special</p>
+{{/if}}
+
+<p>
+    {{#each currencies}}
+        <a href="#">{{.}}</a>
+    {{else}}
+        Unfortunately we only accecpt {{currency.name}}l
+    {{/each}}
+</p>

@@ -20,8 +20,12 @@ app.set('view engine', 'handlebars');
 // Express -- Order in which routes and middleware are added is significant
 app.get('/', handlers.home)
 app.get('/about', handlers.about)
+app.get('/tours', handlers.tours)
+
 app.use(handlers.notFound);
 app.use(handlers.serverError)
+
+app.get('test')
 
 if(require.main === module) {
     app.listen(port, () => console.log(
