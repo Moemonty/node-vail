@@ -1,27 +1,19 @@
 "use strict";
-// eslint-disable-next-line @typescript-eslint/no-var-requires
 const express = require('express');
 const { engine } = require('express-handlebars');
 const handlers = require('./lib/handlers');
+const app = express();
+app.engine('.hbs', engine({
+    defaultLayout: 'main',
+    extname: '.hbs'
+}));
+app.set('view engine', '.hbs');
+app.set('views', './views');
 //declare middleware used
 const weatherMiddlware = require('./lib/middleware/weather');
-const app = express();
 const port = process.env.PORT || 3000;
-// TODO -- why/when used?
-// app.use(express.static(__dirname + '/public'))
 // use middleware
 app.use(weatherMiddlware);
-app.engine('handlebars', engine({
-    defaultLayout: 'main',
-    // helpers: {
-    //   section: function(name: any, options: any) {
-    //     if(!this._sections) this._sections = {}
-    //     this._sections[name] = options.fn(this)
-    //     return null
-    //   },
-    // }
-}));
-app.set('view engine', 'handlebars');
 // Express -- Order in which routes and middleware are added is significant
 app.get('/', handlers.home);
 app.get('/about', handlers.about);
