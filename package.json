@@ -8,7 +8,7 @@
   "main": "meadowlark.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "npm build && node dist/meadowlark.js",
+    "start": "npm run build && node dist/meadowlark.js",
     "test": "jest",
     "lint": "eslint meadowlark.ts lib/ js/",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/meadowlark.js\""
