@@ -21,6 +21,7 @@ const toursContext = {
 exports.home = (req: Request, res: Response) => res.render('pages/home')
 exports.about = (req: Request, res: Response) => res.render('pages/about', aboutContext)
 exports.tours = (req: Request, res: Response) => res.render('pages/tours', toursContext)
+exports.foo = (req: Request, res: Response) => res.render('foo', { layout: null })
 
 
 exports.notFound = (req: Request, res: Response) => res.render('404')

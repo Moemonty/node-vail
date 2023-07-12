@@ -19,6 +19,7 @@ const toursContext = {
 exports.home = (req, res) => res.render('pages/home');
 exports.about = (req, res) => res.render('pages/about', aboutContext);
 exports.tours = (req, res) => res.render('pages/tours', toursContext);
+exports.foo = (req, res) => res.render('foo', { layout: null });
 exports.notFound = (req, res) => res.render('404');
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 exports.serverError = (err, req, res, next) => res.render('500');
