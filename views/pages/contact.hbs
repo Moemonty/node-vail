@@ -1,6 +1,31 @@
-<form action="process-contact" method="post">
-    <label for="contactName">Name:</label>
-    <input type="text" id="contactName" name="name">
+<h2>Sign up for our newsletter</h2>
+<div id="newsletterSignupFormContainer">
+    <form action="/newsletter-signup/process?form=newsletter"
+          class="form-horizontal" role="form" id="newsletterSignupForm"
+          method="post">
+        <!--        {{!csrf}} CSRF    -->
+        <input type="hidden" name="_csrf" value="{{csrf}}">
 
-    <input type="submit" value="submit">
-</form>
+        <div class="form-group">
+            <label for="fieldName" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-4">
+                <input type="text" class="form-control"
+                       id="fieldName" name="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fieldEmail" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-4">
+                <input type="email" class="form-control" required
+                       id="fieldEmail" name="email">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

@@ -33,7 +33,6 @@ const getWeatherData = () => Promise.resolve([
 ])
 
 const weatherMiddleware = async (req: Request, res: Response, next: NextFunction) => {
-  console.log('weather middleware');
   if(!res.locals.partials) res.locals.partials = {}
   res.locals.partials.weatherContext = await getWeatherData()
   next()

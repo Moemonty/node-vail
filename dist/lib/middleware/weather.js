@@ -42,7 +42,6 @@ const getWeatherData = () => Promise.resolve([
     },
 ]);
 const weatherMiddleware = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
-    console.log('weather middleware');
     if (!res.locals.partials)
         res.locals.partials = {};
     res.locals.partials.weatherContext = yield getWeatherData();
