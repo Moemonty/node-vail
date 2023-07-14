@@ -24,9 +24,8 @@ exports.about = (req: Request, res: Response) => res.render('pages/about', about
 exports.tours = (req: Request, res: Response) => res.render('pages/tours', toursContext)
 exports.foo = (req: Request, res: Response) => res.render('foo', { layout: null })
 
-
 exports.newsletterSignup = (req: Request, res: Response) => {
-  res.render('pages/contact', { csrf: 'CSRF Token goes here'})
+  res.render('pages/newsletter', { csrf: 'CSRF Token goes here'})
 }
 
 exports.newsletterSignupProcess = (req: Request, res: Response) => {

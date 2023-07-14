@@ -22,7 +22,7 @@ exports.about = (req, res) => res.render('pages/about', aboutContext);
 exports.tours = (req, res) => res.render('pages/tours', toursContext);
 exports.foo = (req, res) => res.render('foo', { layout: null });
 exports.newsletterSignup = (req, res) => {
-    res.render('pages/contact', { csrf: 'CSRF Token goes here' });
+    res.render('pages/newsletter', { csrf: 'CSRF Token goes here' });
 };
 exports.newsletterSignupProcess = (req, res) => {
     console.log(req.body);

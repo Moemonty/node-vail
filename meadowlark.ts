@@ -20,15 +20,15 @@ const port = process.env.PORT || 3000
 // use middleware
 app.use(weatherMiddlware)
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Express -- Order in which routes and middleware are added is significant
 app.get('/', handlers.home)
 app.get('/about', handlers.about)
-// app.get('/contact', handlers.contact)
 app.get('/foo', handlers.foo)
 app.get('/tours', handlers.tours)
-
-app.get('/contact', handlers.newsletterSignup);
+// app.get('/contact', handlers.newsletterSignup);
+app.get('/newsletter', handlers.newsletterSignup)
 app.post('/newsletter-signup/process', handlers.newsletterSignupProcess);
 app.get('/newsletter-signup/thank-you', handlers.newsletterSignupThankYou);
 
