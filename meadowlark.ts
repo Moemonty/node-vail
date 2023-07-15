@@ -30,7 +30,7 @@ const weatherMiddlware = require('./lib/middleware/weather')
 // use middleware
 app.use(weatherMiddlware)
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 // Express -- Order in which routes and middleware are added is significant
 app.get('/newsletter', handlers.newsletter)

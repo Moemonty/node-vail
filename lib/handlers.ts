@@ -28,14 +28,27 @@ exports.newsletter = (req, res) => {
   res.render('pages/newsletter', { csrf: 'CSRF token goes here'})
 }
 
+
 exports.api = {
   newsletterSignup: (req, res) => {
-    console.log('CSRF token field: ', + req.body._csrf);
+    console.log(req.body._csrf  );
+    // Styles of interporlation -- pick ONE :) :| :(
+    console.log('CSRF token field: ' + req.body._csrf);
     console.log(`Name:  ${req.body.name}`);
-    console.log('Email: ', + req.body.email);
+    console.log('Email: ', req.body.email);
     res.send({ result: 'success'})
   }
 }
+
+// OBJECT FOR API -- Other Style
+// exports.api = {};
+// exports.api.newsletterSignup = (req, res) => {
+//   console.log('CSRF token (from hidden form field): ' + req.body._csrf)
+//   console.log('Name (from visible form field): ' + req.body.name)
+//   console.log('Email (from visible form field): ' + req.body.email)
+//   res.send({ result: 'success' })
+// }
+
 
 exports.notFound = (req: Request, res: Response) => res.render('404')
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
