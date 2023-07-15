@@ -31,7 +31,7 @@ exports.newsletter = (req, res) => {
 exports.api = {
   newsletterSignup: (req, res) => {
     console.log('CSRF token field: ', + req.body._csrf);
-    console.log('Name: ', + req.body.name);
+    console.log(`Name:  ${req.body.name}`);
     console.log('Email: ', + req.body.email);
     res.send({ result: 'success'})
   }
