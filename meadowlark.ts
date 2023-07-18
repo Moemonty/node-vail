@@ -2,7 +2,6 @@ const express = require('express');
 const { engine } = require ('express-handlebars');
 const handlers = require('./lib/handlers')
 const bodyParser = require('body-parser');
-
 const app = express();
 
 // engine settings
@@ -43,6 +42,22 @@ app.post('/api/newsletter-signup', handlers.api.newsletterSignup)
 
 app.use(handlers.notFound);
 app.use(handlers.serverError)
+
+// PostgreSQL Connection
+const { Client } = require('pg')
+const client = new Client({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'node_vail',
+  password: '',
+  port: 5432,
+})
+client.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
+// PostgreSQL Connection
+
 
 if(require.main === module) {
   app.listen(port, () => console.log(
