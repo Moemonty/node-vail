@@ -1,8 +1,5 @@
 const { Pool } = require('pg')
-
 const _ = require('lodash')
-
-const { Client } = require('pg')
 
 const pool = new Pool({
   user: 'postgres',
