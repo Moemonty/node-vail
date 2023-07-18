@@ -1,8 +1,12 @@
+import { Request, Response } from "express";
+
 const express = require('express');
 const { engine } = require ('express-handlebars');
 const handlers = require('./lib/handlers')
 const bodyParser = require('body-parser');
 const app = express();
+
+const db = require('./postgres/db.js');
 
 // engine settings
 app.engine('.hbs', engine({
@@ -37,6 +41,15 @@ app.get('/', handlers.home)
 app.get('/about', handlers.about)
 app.get('/foo', handlers.foo)
 app.get('/tours', handlers.tours)
+app.get('/vacations', async (req: Request, res: Response) => {
+  try {
+    const result = await db.getVacations();
+    res.send({ result: result})
+  } catch (error) {
+    console.error('Error: ', error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+})
 
 app.post('/api/newsletter-signup', handlers.api.newsletterSignup)
 
@@ -44,18 +57,18 @@ app.use(handlers.notFound);
 app.use(handlers.serverError)
 
 // PostgreSQL Connection
-const { Client } = require('pg')
-const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'node_vail',
-  password: '',
-  port: 5432,
-})
-client.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
+// const { Client } = require('pg')
+// const client = new Client({
+//   user: 'postgres',
+//   host: 'localhost',
+//   database: 'node_vail',
+//   password: '',
+//   port: 5432,
+// })
+// client.connect(function(err) {
+//   if (err) throw err;
+//   console.log("Connected!");
+// });
 // PostgreSQL Connection
 
 
