@@ -40,6 +40,21 @@ exports.api = {
   }
 }
 
+exports.vacationPhotoContest = (req, res) => {
+  const now = new Date()
+  res.render('contest/vacation-photo', { year: now.getFullYear(), month: now.getMonth() })
+}
+
+exports.vacationPhotoContestProcess = (req, res, fields, files) => {
+  console.log('field data: ', fields);
+  console.log('files: ', files);
+  res.redirect(303, '/contest/vacation-photo-thank-you')
+}
+
+exports.vacationPhotoContestProcessError = (req, res, fields, files) => {
+  res.redirect(303, '/contest/vacation-photo-error')
+}
+
 // OBJECT FOR API -- Other Style
 // exports.api = {};
 // exports.api.newsletterSignup = (req, res) => {
