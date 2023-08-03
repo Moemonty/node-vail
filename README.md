@@ -12,4 +12,8 @@
 `node seeds/db-init.js`
 
 
+## Typescript Practice Files:
+- File in /js are mostly typescript practice files from Educative
+
+
 
