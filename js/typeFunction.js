@@ -5,4 +5,4 @@ function logScores(firstName) {
     }
     console.log(firstName, scores);
 }
-logScores(1, '2');
+logScores('Moe', 1, 2);

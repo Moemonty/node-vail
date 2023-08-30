@@ -3,4 +3,4 @@ function logScores(firstName: string, ...scores: number[]) {
 }
 
 
-logScores(1, '2');
+logScores('Moe', 1, 2);
